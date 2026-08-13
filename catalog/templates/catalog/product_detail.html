@@ -1,4 +1,5 @@
 {% extends "catalog/base.html" %}
+{% load i18n %}
 
 {% block title %}{{ product.name }}{% endblock %}
 
@@ -6,26 +7,32 @@
     <h2>{{ product.name }}</h2>
     <p><a href="{% url 'catalog:product_list_by_category' product.category.slug %}">{{ product.category.name }}</a></p>
     <p><strong>${{ product.price }}</strong></p>
-    <p>{% if product.stock > 0 %}In stock ({{ product.stock }} available){% else %}Out of stock{% endif %}</p>
+    <p>
+        {% if product.stock > 0 %}
+            {% blocktrans with stock=product.stock %}In stock ({{ stock }} available){% endblocktrans %}
+        {% else %}
+            {% trans "Out of stock" %}
+        {% endif %}
+    </p>
 
-    <h4>Description</h4>
-    <p>{{ product.description|default:"No description available." }}</p>
+    <h4>{% trans "Description" %}</h4>
+    <p>{{ product.description|default:_("No description available.") }}</p>
 
     {% if product.stock > 0 %}
         {% if remaining_stock > 0 %}
             <form method="post" action="{% url 'cart:cart_add' product.id %}" class="form-inline">
                 {% csrf_token %}
-                <label for="quantity" class="mr-2">Quantity:</label>
+                <label for="quantity" class="mr-2">{% trans "Quantity:" %}</label>
                 <input type="number" name="quantity" id="quantity" value="1" min="1" max="{{ remaining_stock }}" class="form-control mr-2" style="width: 80px;">
-                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                <button type="submit" class="btn btn-primary">{% trans "Add to Cart" %}</button>
             </form>
         {% else %}
             <form class="form-inline" style="opacity: 0.6;">
-                <label for="quantity" class="mr-2">Quantity:</label>
+                <label for="quantity" class="mr-2">{% trans "Quantity:" %}</label>
                 <input type="number" id="quantity" value="0" disabled class="form-control mr-2" style="width: 80px; border: 2px solid #ccc;">
-                <button type="button" class="btn btn-secondary" style="border: 2px solid #ccc;" disabled>Max in Cart</button>
+                <button type="button" class="btn btn-secondary" style="border: 2px solid #ccc;" disabled>{% trans "Max in Cart" %}</button>
             </form>
-            <p class="text-muted">You already have the maximum available quantity of this item in your cart.</p>
+            <p class="text-muted">{% trans "You already have the maximum available quantity of this item in your cart." %}</p>
         {% endif %}
     {% endif %}
 {% endblock %}

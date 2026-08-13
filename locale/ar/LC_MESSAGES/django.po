@@ -1,0 +1,175 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-13 15:08+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+#: .\cart\templates\cart\detail.html:4 .\cart\templates\cart\detail.html:7
+msgid "Your Cart"
+msgstr "سلة التسوق"
+
+#: .\cart\templates\cart\detail.html:13
+msgid "Product"
+msgstr "المنتج"
+
+#: .\cart\templates\cart\detail.html:14
+msgid "Price"
+msgstr "السعر"
+
+#: .\cart\templates\cart\detail.html:15
+msgid "Quantity"
+msgstr "الكمية"
+
+#: .\cart\templates\cart\detail.html:16
+msgid "Total"
+msgstr "الإجمالي"
+
+#: .\cart\templates\cart\detail.html:30
+msgid "Remove"
+msgstr "إزالة"
+
+#: .\cart\templates\cart\detail.html:37
+#, python-format
+msgid "Total: $%(total)s"
+msgstr "الإجمالي: $%(total)s"
+
+#: .\cart\templates\cart\detail.html:39
+msgid "Your cart is empty."
+msgstr "سلتك فارغة."
+
+#: .\catalog\templates\catalog\base.html:59
+msgid "Mustafa's website"
+msgstr "موقع مصطفى"
+
+#: .\catalog\templates\catalog\base.html:64
+msgid "Home"
+msgstr "الرئيسية"
+
+#: .\catalog\templates\catalog\base.html:65
+msgid "Cart"
+msgstr "السلة"
+
+#: .\catalog\templates\catalog\base.html:75
+msgid "Log out"
+msgstr "تسجيل الخروج"
+
+#: .\catalog\templates\catalog\base.html:78
+#: .\catalog\templates\registration\login.html:13
+#: .\catalog\templates\registration\register.html:4
+#: .\catalog\templates\registration\register.html:11
+msgid "Register"
+msgstr "إنشاء حساب"
+
+#: .\catalog\templates\catalog\base.html:79
+#: .\catalog\templates\registration\login.html:4
+#: .\catalog\templates\registration\login.html:7
+msgid "Login"
+msgstr "تسجيل الدخول"
+
+#: .\catalog\templates\catalog\base.html:99
+msgid "My Site"
+msgstr "موقعي"
+
+#: .\catalog\templates\catalog\base.html:102
+msgid ""
+"Hello, this is the base template. You can override this content in child "
+"templates."
+msgstr "مرحبًا، هذا هو القالب الأساسي. يمكنك تجاوز هذا المحتوى في القوالب الفرعية."
+
+#: .\catalog\templates\catalog\product_detail.html:12
+#, python-format
+msgid "In stock (%(stock)s available)"
+msgstr "متوفر (%(stock)s متاح)"
+
+#: .\catalog\templates\catalog\product_detail.html:14
+msgid "Out of stock"
+msgstr "غير متوفر"
+
+#: .\catalog\templates\catalog\product_detail.html:18
+msgid "Description"
+msgstr "الوصف"
+
+#: .\catalog\templates\catalog\product_detail.html:19
+msgid "No description available."
+msgstr "لا يوجد وصف متاح."
+
+#: .\catalog\templates\catalog\product_detail.html:25
+#: .\catalog\templates\catalog\product_detail.html:31
+msgid "Quantity:"
+msgstr "الكمية:"
+
+#: .\catalog\templates\catalog\product_detail.html:27
+msgid "Add to Cart"
+msgstr "أضف إلى السلة"
+
+#: .\catalog\templates\catalog\product_detail.html:33
+msgid "Max in Cart"
+msgstr "الحد الأقصى في السلة"
+
+#: .\catalog\templates\catalog\product_detail.html:35
+msgid ""
+"You already have the maximum available quantity of this item in your cart."
+msgstr "لديك بالفعل الحد الأقصى للكمية المتاحة من هذا المنتج في سلتك."
+
+#: .\catalog\templates\catalog\product_list.html:4
+#: .\catalog\templates\catalog\product_list.html:7
+msgid "All Products"
+msgstr "جميع المنتجات"
+
+#: .\catalog\templates\catalog\product_list.html:10
+msgid "Sort by:"
+msgstr "الترتيب حسب:"
+
+#: .\catalog\templates\catalog\product_list.html:12
+msgid "-- select --"
+msgstr "-- اختر --"
+
+#: .\catalog\templates\catalog\product_list.html:13
+msgid "Name (A-Z)"
+msgstr "الاسم (أ-ي)"
+
+#: .\catalog\templates\catalog\product_list.html:14
+msgid "Name (Z-A)"
+msgstr "الاسم (ي-أ)"
+
+#: .\catalog\templates\catalog\product_list.html:15
+msgid "Price (Low to High)"
+msgstr "السعر (من الأقل إلى الأعلى)"
+
+#: .\catalog\templates\catalog\product_list.html:16
+msgid "Price (High to Low)"
+msgstr "السعر (من الأعلى إلى الأقل)"
+
+#: .\catalog\templates\catalog\product_list.html:37
+msgid "No products found."
+msgstr "لم يتم العثور على منتجات."
+
+#: .\catalog\templates\registration\login.html:11
+#: .\catalog\templates\registration\register.html:13
+msgid "Log in"
+msgstr "تسجيل الدخول"
+
+#: .\catalog\templates\registration\login.html:13
+msgid "Don't have an account?"
+msgstr "ليس لديك حساب؟"
+
+#: .\catalog\templates\registration\register.html:7
+msgid "Create an account"
+msgstr "إنشاء حساب"
+
+#: .\catalog\templates\registration\register.html:13
+msgid "Already have an account?"
+msgstr "هل لديك حساب بالفعل؟"

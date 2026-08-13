@@ -27,4 +27,5 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('cart/', include('cart.urls', namespace='cart')),
     path('shop/', include('catalog.urls', namespace='catalog')),
+    path('i18n/', include('django.conf.urls.i18n')),
 ]

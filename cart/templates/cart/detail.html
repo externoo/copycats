@@ -1,18 +1,19 @@
 {% extends "catalog/base.html" %}
+{% load i18n %}
 
-{% block title %}Your Cart{% endblock %}
+{% block title %}{% trans "Your Cart" %}{% endblock %}
 
 {% block content %}
-    <h2>Your Cart</h2>
+    <h2>{% trans "Your Cart" %}</h2>
 
     {% if cart|length > 0 %}
         <table class="table">
             <thead>
                 <tr>
-                    <th>Product</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Total</th>
+                    <th>{% trans "Product" %}</th>
+                    <th>{% trans "Price" %}</th>
+                    <th>{% trans "Quantity" %}</th>
+                    <th>{% trans "Total" %}</th>
                     <th></th>
                 </tr>
             </thead>
@@ -26,15 +27,15 @@
                         <td>
                             <form method="post" action="{% url 'cart:cart_remove' item.product.id %}">
                                 {% csrf_token %}
-                                <button type="submit" class="btn btn-sm btn-danger">Remove</button>
+                                <button type="submit" class="btn btn-sm btn-danger">{% trans "Remove" %}</button>
                             </form>
                         </td>
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
-        <h4>Total: ${{ cart.get_total_price }}</h4>
+        <h4>{% blocktrans with total=cart.get_total_price %}Total: ${{ total }}{% endblocktrans %}</h4>
     {% else %}
-        <p>Your cart is empty.</p>
+        <p>{% trans "Your cart is empty." %}</p>
     {% endif %}
 {% endblock %}
