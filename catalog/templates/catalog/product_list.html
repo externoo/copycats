@@ -1,0 +1,38 @@
+{% extends "catalog/base.html" %}
+
+{% block title %}{% if category %}{{ category.name }}{% else %}All Products{% endif %}{% endblock %}
+
+{% block content %}
+    <h2>{% if category %}{{ category.name }}{% else %}All Products{% endif %}</h2>
+
+    <form method="get" class="form-inline mb-3">
+        <label for="sort" class="mr-2">Sort by:</label>
+        <select name="sort" id="sort" class="form-control" onchange="this.form.submit()">
+            <option value="">-- select --</option>
+            <option value="name_asc" {% if sort == "name_asc" %}selected{% endif %}>Name (A-Z)</option>
+            <option value="name_desc" {% if sort == "name_desc" %}selected{% endif %}>Name (Z-A)</option>
+            <option value="price_asc" {% if sort == "price_asc" %}selected{% endif %}>Price (Low to High)</option>
+            <option value="price_desc" {% if sort == "price_desc" %}selected{% endif %}>Price (High to Low)</option>
+        </select>
+    </form>
+
+    {% if products %}
+        <div class="row">
+            {% for product in products %}
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="{% url 'catalog:product_detail' product.id %}">{{ product.name }}</a>
+                            </h5>
+                            <p class="card-text">{{ product.category.name }}</p>
+                            <p class="card-text"><strong>${{ product.price }}</strong></p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No products found.</p>
+    {% endif %}
+{% endblock %}
